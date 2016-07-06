@@ -1,4 +1,4 @@
-package lmadrig.sites;
+package io.github.madrigal.sites;
 
 import java.net.MalformedURLException;
 import java.net.URL;

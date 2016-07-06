@@ -1,7 +1,6 @@
-package lmadrig.sites.reddit;
+package io.github.madrigal.sites.reddit;
 
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -9,9 +8,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
-import lmadrig.requests.Request;
-import lmadrig.sites.SiteClient;
-import lmadrig.sites.Story;
+import io.github.madrigal.sites.SiteClient;
+import io.github.madrigal.sites.Story;
+import io.github.madrigal.requests.Request;
 
 public class RedditClient implements SiteClient {
 

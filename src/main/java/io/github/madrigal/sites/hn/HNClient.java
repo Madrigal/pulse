@@ -1,4 +1,4 @@
-package lmadrig.sites.hn;
+package io.github.madrigal.sites.hn;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
-import lmadrig.requests.Request;
-import lmadrig.sites.SiteClient;
-import lmadrig.sites.Story;
+import io.github.madrigal.sites.SiteClient;
+import io.github.madrigal.sites.Story;
+import io.github.madrigal.requests.Request;
 
 public class HNClient implements SiteClient {
     private static final String BASE_URL = "https://hacker-news.firebaseio.com/v0/";

@@ -1,6 +1,6 @@
-package lmadrig.sites.hn;
+package io.github.madrigal.sites.hn;
 
-import lmadrig.sites.Story;
+import io.github.madrigal.sites.Story;
 
 import java.net.MalformedURLException;
 import java.net.URL;

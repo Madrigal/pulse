@@ -1,9 +1,9 @@
-package lmadrig.topic;
+package io.github.madrigal.topic;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import lmadrig.sites.Story;
+import io.github.madrigal.sites.Story;
 
 public class Finder {
     private Finder () {

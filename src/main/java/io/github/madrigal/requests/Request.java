@@ -1,4 +1,4 @@
-package lmadrig.requests;
+package io.github.madrigal.requests;
 
 import java.io.BufferedReader;
 import java.io.IOException;

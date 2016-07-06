@@ -1,21 +1,19 @@
 
-package lmadrig.sites.reddit;
+package io.github.madrigal.sites.reddit.generated;
 
 import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import lmadrig.sites.reddit.generated.Data;
-
 @Generated("org.jsonschema2pojo")
-public class RedditResponse {
+public class Child {
 
     @SerializedName("kind")
     @Expose
     private String kind;
     @SerializedName("data")
     @Expose
-    private Data data;
+    private Data_ data;
 
     /**
      *
@@ -40,7 +38,7 @@ public class RedditResponse {
      * @return
      *     The data
      */
-    public Data getData() {
+    public Data_ getData() {
         return data;
     }
 
@@ -49,7 +47,7 @@ public class RedditResponse {
      * @param data
      *     The data
      */
-    public void setData(Data data) {
+    public void setData(Data_ data) {
         this.data = data;
     }
 

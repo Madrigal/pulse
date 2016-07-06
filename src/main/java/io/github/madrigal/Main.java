@@ -1,13 +1,13 @@
-package lmadrig;
+package io.github.madrigal;
 
 import java.util.Arrays;
 import java.util.List;
 
-import lmadrig.sites.SiteClient;
-import lmadrig.sites.Story;
-import lmadrig.sites.hn.HNClient;
-import lmadrig.sites.reddit.RedditClient;
-import lmadrig.topic.Finder;
+import io.github.madrigal.sites.SiteClient;
+import io.github.madrigal.sites.Story;
+import io.github.madrigal.sites.hn.HNClient;
+import io.github.madrigal.sites.reddit.RedditClient;
+import io.github.madrigal.topic.Finder;
 
 public class Main {
     final static String myTopic = "Amazon";

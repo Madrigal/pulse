@@ -1,11 +1,11 @@
-package lmadrig.sites.reddit;
+package io.github.madrigal.sites.reddit;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import lmadrig.sites.Story;
-import lmadrig.sites.reddit.generated.Child;
-import lmadrig.sites.reddit.generated.Data_;
+import io.github.madrigal.sites.Story;
+import io.github.madrigal.sites.reddit.generated.Child;
+import io.github.madrigal.sites.reddit.generated.Data_;
 
 public class RedditStory implements Story {
 

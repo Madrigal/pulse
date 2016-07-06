@@ -1,5 +1,5 @@
 
-package lmadrig.sites.reddit.generated;
+package io.github.madrigal.sites.reddit.generated;
 
 import java.util.ArrayList;
 import java.util.List;
