@@ -9,6 +9,17 @@ repositories {
     jcenter()
 }
 
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Pulse Jar',
+                'Implementation-Version': '1.0',
+                'Main-Class': mainClassName
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
 dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.google.code.gson:gson:2.6.2'
