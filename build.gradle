@@ -10,6 +10,7 @@ repositories {
 }
 
 //create a single Jar with all dependencies
+// it will be located in build/libs/XXX-all.jar
 task fatJar(type: Jar) {
     manifest {
         attributes 'Implementation-Title': 'Pulse Jar',
