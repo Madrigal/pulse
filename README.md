@@ -1,12 +1,13 @@
 # Pulse
 
-Follow your favorite topics from your favorite sources such as HN and Reddit. The idea is to execute it behind a cronjob and being able to send
-updates via email.
+Follow your favorite topics from your favorite sources such as HN and Reddit.
+You can call it either via the command line or set it up in an AWS Lambda
+function to periodically poll the sites.
+
+## Prerequisites
+- Setup Lambda
+- Setup SES
 
 ## Current implementations
 - HN
 - Reddit
-
-## Whishlist
-- Don't hardcode configurations :)
-- See if we can put this on a Lambda 
