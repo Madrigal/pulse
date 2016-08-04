@@ -21,7 +21,7 @@ public class Request {
     public static String Get(String url) throws IOException {
         URL u = new URL(url);
         HttpURLConnection con = (HttpURLConnection) u.openConnection();
-        con.setRequestProperty("User-Agent", "TopicWatcher-1.0");
+        con.setRequestProperty("User-Agent", "Pulse-1.0");
         con.setRequestMethod("GET");
         con.setInstanceFollowRedirects(true);
         int statusCode = con.getResponseCode();
@@ -38,16 +38,15 @@ public class Request {
     /**
      * Since Java doesn't redirect by default we need to take care of that
      * ourselves. Will try to redirect, and if can't, blow up
+     *
      * @param con
+     *
      * @return
      */
     private static HttpURLConnection redirectOrDie(HttpURLConnection con) throws IOException {
-        System.out.println("Redirecting");
         String location = con.getHeaderField("Location");
-        System.out.println(location);
-        URL base     = con.getURL();
-        URL next     = new URL(base, location);  // Deal with relative URLs
-        System.out.println("new url=" + next.toExternalForm());
+        URL base = con.getURL();
+        URL next = new URL(base, location);  // Deal with relative URLs
         HttpURLConnection newcon = (HttpURLConnection) next.openConnection();
         newcon.setRequestMethod(con.getRequestMethod());
         int code = con.getResponseCode();
