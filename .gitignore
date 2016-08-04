@@ -1,5 +1,6 @@
 .gradle
 /build/
+gradle/wrapper/gradle-wrapper.properties
 
 # Ignore Gradle GUI config
 gradle-app.setting
