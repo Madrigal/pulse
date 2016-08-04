@@ -1,9 +1,6 @@
 package io.github.madrigal.sites.hn;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -18,6 +15,7 @@ import io.github.madrigal.requests.Request;
 
 public class HNClient implements SiteClient {
     private static final String BASE_URL = "https://hacker-news.firebaseio.com/v0/";
+    private static final String TOP_STORIES_PATH = "topstories.json";
 
     @Override
     public List<Story> getTopStories() {
@@ -28,20 +26,6 @@ public class HNClient implements SiteClient {
             id -> (Story)getStory(id))
             .collect(Collectors.toList());
         return stories;
-    }
-
-    private List<Integer> storiesNotSeen(List<Integer> storieIds) {
-        try {
-            Connection connection = DriverManager.getConnection("jdbc:sqlite:sample.db");
-
-            System.out.println(">>>>");
-            System.out.println(connection);
-
-        } catch (SQLException e) {
-            System.out.println("Failed to create connection");
-            System.out.println(e);
-        }
-        return storieIds;
     }
 
     private static HNStory getStory(int id) {
@@ -62,7 +46,7 @@ public class HNClient implements SiteClient {
 
     private List<Integer> getTopStoriesWebsite() {
         try {
-            final String res = Request.Get(BASE_URL + "topstories.json");
+            final String res = Request.Get(BASE_URL + TOP_STORIES_PATH);
             Gson gson = new Gson();
             return Arrays.asList(gson.fromJson(res, Integer[].class));
         }

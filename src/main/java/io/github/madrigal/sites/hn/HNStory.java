@@ -2,8 +2,6 @@ package io.github.madrigal.sites.hn;
 
 import io.github.madrigal.sites.Story;
 
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Generated;
@@ -14,7 +12,7 @@ public class HNStory implements Story {
     public String by;
     public int descendants;
     public int id;
-    public List<Integer> kids = new ArrayList<Integer>();
+    public List<Integer> kids = new ArrayList<>();
     public int score;
     public int time;
     public String title;
@@ -22,13 +20,23 @@ public class HNStory implements Story {
     public String url;
 
     @Override
-    public URL getUrl() throws MalformedURLException {
-        return new URL(this.url);
+    public String getUrl() {
+        return this.url;
     }
 
     @Override
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public String getCommentsUrl() {
+        return "https://news.ycombinator.com/item?id=" + Integer.toString(id);
+    }
+
+    @Override
+    public int getNumberOfComments() {
+        return descendants;
     }
 
     @Override

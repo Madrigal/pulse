@@ -1,18 +1,19 @@
 package io.github.madrigal.sites.reddit;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-
 import io.github.madrigal.sites.Story;
 import io.github.madrigal.sites.reddit.generated.Child;
 import io.github.madrigal.sites.reddit.generated.Data_;
 
 public class RedditStory implements Story {
 
-    // There are more things, but we don't care about it
+    // There are more things, but we don't care about them
     String id;
     String title;
     String url;
+    String permalink;
+    int numComments;
+
+    public static String BASE_URL = "https://www.reddit.com";
 
     public static RedditStory fromChild(Child input) {
         RedditStory story = new RedditStory();
@@ -20,6 +21,8 @@ public class RedditStory implements Story {
         story.id = data.getId();
         story.title = data.getTitle();
         story.url = data.getUrl();
+        story.permalink = data.getPermalink();
+        story.numComments = data.getNumComments();
         return story;
     }
 
@@ -39,7 +42,17 @@ public class RedditStory implements Story {
     }
 
     @Override
-    public URL getUrl() throws MalformedURLException {
-        return new URL(url);
+    public String getUrl() {
+        return url;
+    }
+
+    @Override
+    public String getCommentsUrl() {
+        return BASE_URL + permalink;
+    }
+
+    @Override
+    public int getNumberOfComments() {
+        return numComments;
     }
 }
