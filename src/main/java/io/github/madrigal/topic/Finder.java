@@ -1,5 +1,7 @@
 package io.github.madrigal.topic;
 
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,10 +12,10 @@ public class Finder {
 
     }
 
-    public static List<Story> filterByKeyword(List<Story> stories, String keyword) {
+    public static List<Story> filterByKeyword(List<Story> stories, Collection<String> keywords) {
         return stories.stream().filter(
-            s -> isRelatedToTopic(s, keyword))
-            .collect(Collectors.toList());
+                        s -> containsTopic(s, keywords))
+                .collect(Collectors.toList());
     }
 
     /**
@@ -27,6 +29,15 @@ public class Finder {
         String normalizedTitle = normalize(title);
         String normalizedKeyword = normalize(keyword);
         return normalizedTitle.contains(normalizedKeyword);
+    }
+
+    private static boolean containsTopic(Story story, Collection<String> keywords) {
+        for (String k: keywords) {
+            if (isRelatedToTopic(story, k)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static String normalize(String text) {

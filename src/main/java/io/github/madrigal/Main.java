@@ -2,6 +2,7 @@ package io.github.madrigal;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 
 import javax.mail.MessagingException;
@@ -23,9 +24,9 @@ import io.github.madrigal.topic.Finder;
 
 public class Main {
 
-    private static final String MY_TOPIC = "Amazon";
+    private static final Collection MY_TOPICS = Arrays.asList("Amazon", "Mexico");
     // This needs to match what is setup on SES
-    private static final String EMAIL = "email@domain.com";
+    private static final String EMAIL = "email@gmail.com";
 
     // Called via the command line
     public static void main(String[] args) {
@@ -67,6 +68,6 @@ public class Main {
 
     private static List<Story> getRelevantStories(SiteClient client) {
         List<Story> stories = client.getTopStories();
-        return Finder.filterByKeyword(stories, MY_TOPIC);
+        return Finder.filterByKeyword(stories, MY_TOPICS);
     }
 }
