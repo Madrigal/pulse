@@ -12,6 +12,9 @@ import io.github.madrigal.sites.SiteClient;
 import io.github.madrigal.sites.Story;
 import io.github.madrigal.requests.Request;
 
+/**
+ * Cant use now since Reddit closed down their API
+ */ 
 public class RedditClient implements SiteClient {
 
     public static String BASE_URL = "https://www.reddit.com";

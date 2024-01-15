@@ -40,7 +40,7 @@ public class Main {
 
     public static void doIt(AWSCredentialsProvider provider) {
         try {
-            List<SiteClient> clients = Arrays.asList(new HNClient(), new RedditClient());
+            List<SiteClient> clients = Arrays.asList(new HNClient());
             StringBuilder b = new StringBuilder();
             clients.stream().map(
                 x -> getRelevantStories(x))
